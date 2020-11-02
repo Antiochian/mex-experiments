@@ -8,3 +8,6 @@ Results are looking good! Even with such a simple algorithm, the C++ implementat
 | Log scale | Linear scale |
 |:---:|:---:|
 |![Log scale](speed_log.jpg) | ![linear scale](speed.jpg)|
+
+
+However, there is a small initial overhead when calling a mex function, so you don't want to be calling the same mex function over and over again if you can help it - better to incorporate any loops into the mex function itself so you only suffer the (tiny) overhead once.
